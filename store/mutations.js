@@ -17,16 +17,13 @@ export default {
     const newCartData = Object.assign({}, payLoad);
     state.cart.push(newCartData);
   },
-
   REMOVE_CART(state, payLoad){
     var carts = state.cart
     carts.splice(carts.indexOf(payLoad), 1);
   },
-
   ADD_QUANTITY(state, data) {
     state.cart[data.targetIndex].quantity += data.quantity;
   },
-
   CLEAR_NEW_CART(state){
     state.newcart = [];
   },
