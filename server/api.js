@@ -40,7 +40,7 @@ const exData = {
       "title": "Nike Air Max 90",
       "color": "White / Black",
       "size": ["9", "10", "11"],
-      "price": "100,000",
+      "price": 100000,
       "unit": "WON",
     },
     {
@@ -50,7 +50,7 @@ const exData = {
       "title": "Nike Air Terra 89",
       "color": "White / Red",
       "size": ["9", "10", "11", "12", "13"],
-      "price": "90,000",
+      "price": 90000,
       "unit": "WON",
     },
     {
@@ -60,7 +60,7 @@ const exData = {
       "title": "Nike Air Force 1",
       "color": "White / Blue",
       "size": ["9", "9.5", "10", "14"],
-      "price": "140,000",
+      "price": 140000,
       "unit": "WON",
     }
   ]

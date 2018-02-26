@@ -1,14 +1,15 @@
 //mutations
-import filter from '.././util/filter'
-import compare from '.././util/compare'
 import _ from 'lodash'
 
 export default {
-  INCREMENT(state, n) {
-    state.counter += n;
+  INCREMENT(state, targetIndex) {
+    console.log(targetIndex);
+    state.cart[targetIndex].quantity += 1;
   },
-  DECREMENT(state, n){
-    state.counter -= n;
+  DECREMENT(state, targetIndex){
+    if (state.cart[targetIndex].quantity > 1) {
+      state.cart[targetIndex].quantity -= 1;
+    }
   },
   GET_ITEM(state, payLoad){
     state.newcart = payLoad;
@@ -17,10 +18,19 @@ export default {
     const newCartData = Object.assign({}, payLoad);
     state.cart.push(newCartData);
   },
-  QUICK_ADD_QUANTITY(state, data) {
+
+  REMOVE_CART(state, payLoad){
+    var carts = state.cart
+    carts.splice(carts.indexOf(payLoad), 1);
+  },
+
+  ADD_QUANTITY(state, data) {
     state.cart[data.targetIndex].quantity += data.quantity;
   },
 
+  CLEAR_NEW_CART(state){
+    state.newcart = [];
+  },
   CLEAR_CART(state){
     state.cart = [];
   },

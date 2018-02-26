@@ -11,40 +11,44 @@
         <div class="size-title">Size</div>
         <ul class="size">
           <li v-for="size in product.size" :key="size">
-            <button @click="selectSize(size)">{{size}}</button>
+            <button :data-size="size" @click="selectSize(product, size);"> {{ size }}</button>
           </li>
-          <li></li>
         </ul>
       </div>
       <div class="price">{{product.price}} {{product.unit}}</div>
-      <button class="buy" @click="addCart">Cart</button>
+      <button class="buy" @click="addCart(product.id)">Cart</button>
     </div>
-    <button class="test" @click="test">test</button>
-
   </div>
 
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      selected: undefined,
+    }
+  },
   props: ['product'],
   methods: {
-    selectSize(size) {
-      const selectData = {
-        id: this._props.product.id,
-        size,
-        quantity: 1,
-      };
-
+    selectSize(product, size) {
+      const data = Object.assign({}, product);
+      delete data['size'];
+      const selectData = Object.assign({}, data, { size });
+      for (var item of document.querySelectorAll('[data-size]')) {
+        item.classList.remove('highlight');
+      }
+      event.target.classList.add('highlight');
       this.$store.dispatch('getItem', selectData);
     },
-    addCart() {
+    addCart(id) {
       const newCartData = this.$store.state.newcart;
       this.$store.dispatch('addCart', newCartData);
+      for (var item of document.querySelectorAll('[data-size]')) {
+        item.classList.remove('highlight');
+      }
+      this.$store.dispatch('clearNewCart');
     },
-    test() {
-      console.log(this.$store.getters.getById(this._props.product.id));
-    }
-  }
+   }
 }
 </script>
