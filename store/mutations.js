@@ -1,5 +1,4 @@
 //mutations
-import _ from 'lodash'
 
 export default {
   INCREMENT(state, targetIndex) {
