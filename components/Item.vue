@@ -15,7 +15,7 @@
           </li>
         </ul>
       </div>
-      <div class="price">{{product.price}} {{product.unit}}</div>
+      <div class="price">{{ displayCommas(product.price) }} {{product.unit}}</div>
       <button class="buy" @click="addCart(product.id)">Cart</button>
     </div>
   </div>

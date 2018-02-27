@@ -16,7 +16,7 @@
               <button @click="decrement(product)"><i class="fas fa-minus"></i></button>
               <span class="quantity">{{ product.quantity}}</span>
               <button @click="increment(product)"><i class="fas fa-plus"></i></button>
-              <span class="price">{{product.price}} {{product.unit}}</span>
+              <span class="price">{{ displayCommas(product.price) }} {{product.unit}}</span>
               <button class="remove" @click="removeCart(product)">Remove</button>
             </div>
           </div>
@@ -28,7 +28,7 @@
         <dt>Total:</dt>
         <dd><Cartquantity/></dd>
         <dt>TotalPirce:</dt>
-        <dd>{{totalprice}} WON</dd>
+        <dd>{{ displayCommas(totalprice) }} WON</dd>
       </dl>
       <div class="check-wrap">
         <button>Check Out</button>

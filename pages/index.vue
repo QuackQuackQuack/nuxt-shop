@@ -3,13 +3,15 @@
     <div class="main-banner">
       <Slider v-bind:slider="$store.state.initialData.banner" />
     </div>
-    <div class="product">
-      <h3>product List</h3>
-      <ul class="product-list">
-        <li v-for="product in $store.state.initialData.product" :key="product.title">
-          <Item v-bind:product="product"/>
-        </li>
-      </ul>
+    <div class="content-wrap">
+      <div class="product">
+        <h2>Product List</h2>
+        <ul class="product-list">
+          <li v-for="product in $store.state.initialData.product" :key="product.title">
+            <Item v-bind:product="product"/>
+          </li>
+        </ul>
+      </div>
     </div>
     <Cart/>
   </div>

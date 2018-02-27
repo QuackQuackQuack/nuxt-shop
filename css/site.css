@@ -85,6 +85,19 @@ h3 {
   .main-banner .swiper-container {width: 100%;}
 }
 
+
+.content-wrap {
+  width:1200px;
+  margin:0 auto;
+}
+
+h2 {
+  margin-top:30px;
+  font-size:16px;
+}
+
+
+
 .footer p {
   width:100%;
   font-size: .75em;
@@ -93,10 +106,6 @@ h3 {
   margin: 0;
   padding: 0;
   letter-spacing: 0;
-}
-
-.product {
-  padding:0px 25px;
 }
 
 .product-list {
@@ -208,7 +217,7 @@ h3 {
 .cart > ul > li {padding:10px 0px 0px 10px}
 .cart > ul > li:last-child {padding:10px 0px 10px 10px}
 .cart .cart-item {position:relative;overflow:hidden;}
-.cart .cart-item .thumb {float:left;width:100px;height:100px;}
+.cart .cart-item .thumb {float:left;width:100px;height:100px;border:1px solid #f1f1f1;}
 .cart .cart-item .detail {overflow:hidden;position:relative;height:100px;padding:15px;}
 .cart .cart-item .title {color:#000;font-size:14px;}
 .cart .cart-item .color {color:#888;font-size:12px;}

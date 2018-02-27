@@ -28,7 +28,8 @@ module.exports = {
   */
   plugins: [
     //{ src: '~plugins/vuetify.js'},
-    { src: '~plugins/swiper.js', ssr: false}
+    { src: '~plugins/swiper.js', ssr: false},
+    { src: '~plugins/mixins.js'}
   ],
   build: {
     /*
@@ -40,6 +41,9 @@ module.exports = {
       const extract = config.plugins.find(plugin => plugin.renderExtractedChunk)
       extract.options.allChunks = true
     },
+    // extend(config) {
+    //   config.resolve.alias['Mixins'] = '~/mixins/js/mixins'
+    // },
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -60,5 +64,5 @@ module.exports = {
     //   }
     // },
   },
-  css: ['~/css/common.css', '~/css/site.css'],//'~/assets/app.styl',],
+  css: ['~/css/common.css', '~/css/site.css'],
 }
